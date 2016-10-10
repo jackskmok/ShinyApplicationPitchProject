@@ -1,0 +1,35 @@
+---
+title: "Course Project: Shiny Application and Reproducible Pitch "
+author: "Jack Mok"
+date: "October 10, 2016"
+output: ioslides_presentation
+---
+
+##Overview
+
+This is part of deliverables for the course Developing Data Products as pat of the Coursera Data Science Specialization
+
+The application is written by Shiny and plotly, and can be accessed by https://jackskmok.shinyapps.io/ShinyApplicationPitchProject
+
+Source code for ui.R and server.R files can be accessed from Githup repo:
+https://github.com/jackskmok/ShinyApplicationPitchProject.git
+
+##Web Applciation functionality 
+* This applicaiton is that provide a tool to explore the car performance in terms of Miles Per Gallon(MPG).
+* Select the different Cylinders to explore the relationship between the Cylinders and MPG) with different distribution options.
+
+* Providing the base regression analysis comparations using Displacement, Horse Power, Weight and all these three.
+* By using the dropmenu options, user can select different predicter to analysis the regression of MPG.
+* The diagnostics plot of Regression including Resdiuals vs Fitted, Normal QQ, Scale-Location, and Residuals vs Leverage.
+
+##mtcars Dataset 
+```{r warning = FALSE,echo=FALSE}
+summary(mtcars)
+```
+##Plots 
+```{r warning = FALSE,echo=TRUE, message=FALSE}
+par(mfrow=c(2,3))
+hist(mtcars$mpg, breaks = 5, col = 'blue', 
+     border = 'white', xlab = "Miles/(US) gallon"); 
+plot(lm(mpg ~ wt, data = mtcars))
+```
